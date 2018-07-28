@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from data import Articles
+from scoreboard import get_games
 
 app = Flask(__name__)
 
@@ -7,7 +8,8 @@ Articles = Articles()
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    games = get_games()
+    return render_template('home.html', games=games)
 
 @app.route('/about')
 def about():

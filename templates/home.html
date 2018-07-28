@@ -4,5 +4,31 @@
   <div class="jumbotron text-center">
       <h1>Welcome to FlaskApp</h1>
       <p class="lead">This application is built to learn Flask!</p>
+      <div class=row>
+        <div class="col-lg-5">
+          <div class="list-group">
+            {% for game in games %}
+                <a class="list-group-item list-group-item-action" href="/boxscores/{{ game["GAME_ID"] }}">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      {{ game["TEAM_1_ABBREVIATION"] }}{ { game["TEAM_1_PTS"] }}
+                      <br>
+                      {{ game["TEAM_1_WINS_LOSSES"]}}
+                    </div>
+                    <div class="col-xs-4">
+                      -&nbsp;
+                    </div>
+                    <div class="col-xs-4">
+                        {{ game["TEAM_2_ABBREVIATION"] }}{ { game["TEAM_2_PTS"] }}
+                        <br>
+                        {{ game["TEAM_2_WINS_LOSSES"]}}
+                    </div>
+                  </div>
+                </a>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
   </div>
 {% endblock %}
