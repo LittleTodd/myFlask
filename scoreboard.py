@@ -1,7 +1,7 @@
 import nba_py
 
 def get_games():
-    scoreboard = nba_py.Scoreboard(month=12, day=24, year=2017)
+    scoreboard = nba_py.Scoreboard(month=12, day=25, year=2017, league_id='00', offset=0)
     line_score = scoreboard.line_score()
 
     games = []
